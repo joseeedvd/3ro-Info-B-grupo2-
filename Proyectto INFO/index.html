@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #1f3a63;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .icons .icon {
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #ccc;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .activo {
+            background-color: #1f3a63;
+            color: white;
+        }
+
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .tarjeta {
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .tarjeta img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .footer {
+            background-color: #1f3a63;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="menu-icon">&#9776;</div>
+        <h1>Buscador<span>▼</span></h1>
+        <div class="icons">
+            <span class="icon">🏠</span>
+            <span class="icon">🔔</span>
+            <span class="icon">⋮</span>
+        </div>
+    </header>
+
+    <section class="botones">
+        <button class="tab" onclick="cambiarPestana('carga')">Carga</button>
+        <button class="tab activo" onclick="cambiarPestana('rescate')">Rescate</button>
+        <button class="tab" onclick="cambiarPestana('turista')">Turista</button>
+    </section>
+
+    <main class="contenedor">
+        <!-- 12 tarjetas de aviones -->
+        <div class="tarjeta">
+            <img src="https://via.placeholder.com/100" alt="avión">
+            <h3>Avión 1</h3>
+            <p>Agregar algo de texto</p>
+        </div>
+        <div class="tarjeta">
+            <img src="https://via.placeholder.com/100" alt="avión">
+            <h3>Avión 2</h3>
+            <p>Agregar algo de texto</p>
+        </div>
+        <div class="tarjeta">
+            <img src="https://via.placeholder.com/100" alt="avión">
+            <h3>Avión 3</h3>
+            <p>Agregar algo de texto</p>
+        </div>
+        <div class="tarjeta">
+            <img src="https://via.placeholder.com/100" alt="avión">
+            <h3>Avión 4</h3>
+            <p>Agregar algo de texto</p>
+        </div>
+        <div class="tarjeta">
+            <img src="https://via.placeholder.com/100" alt="avión">
+            <h3>Avión 5</h3>
+            <p>Agregar algo de texto</p>
+        </div>
+        <div class="tarjeta">
+            <img src="https://via.placeholder.com/100" alt="avión">
+            <h3>Avión 6</h3>
+            <p>Agregar algo de texto</p>
+        </div>
+        <div class="tarjeta">
+            <img src="https://via.placeholder.com/100" alt="avión">
+            <h3>Avión 7</h3>
+            <p>Agregar algo de texto</p>
+        </div>
+        <div class="tarjeta">
+            <img src="https://via.placeholder.com/100" alt="avión">
+            <h3>Avión 8</h3>
+            <p>Agregar algo de texto</p>
+        </div>
+        <div class="tarjeta">
+            <img src="https://via.placeholder.com/100" alt="avión">
+            <h3>Avión 9</h3>
+            <p>Agregar algo de texto</p>
+        </div>
+        <div class="tarjeta">
+            <img src="https://via.placeholder.com/100" alt="avión">
+            <h3>Avión 10</h3>
+            <p>Agregar algo de texto</p>
+        </div>
+        <div class="tarjeta">
+            <img src="https://via.placeholder.com/100" alt="avión">
+            <h3>Avión 11</h3>
+            <p>Agregar algo de texto</p>
+        </div>
+        <div class="tarjeta">
+            <img src="https://via.placeholder.com/100" alt="avión">
+            <h3>Avión 12</h3>
+            <p>Agregar algo de texto</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span>✈️</span>
+        <span>✈️</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
