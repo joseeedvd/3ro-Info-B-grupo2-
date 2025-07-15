@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e8e8e8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f3b63;
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+    font-size: 24px;
+    font-family: 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    background-color: #e8e8e8;
+    padding: 10px;
+    gap: 5px;
+}
+
+.tab {
+    padding: 10px 20px;
+    border: 2px solid #1f3b63;
+    background-color: #d9e6f2;
+    color: #1f3b63;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.oculto {
+    display: none;
+}
+
+.tab.activo {
+    background-color: #1f3b63;
+    color: white;
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.tarjeta {
+    background-color: white;
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+    border: 1px solid #ccc;
+    max-width: 800px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta img {
+    width: 100%;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.tarjeta .contenido {
+    flex: 1;
+}
+
+.tarjeta h3 {
+    margin: 10px 0 5px;
+    font-size: 16px;
+    color: #1f3b63;
+}
+
+.tarjeta p {
+    font-size: 14px;
+    color: #333333;
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    background-color: #1E3A5F;
+    color: white;
+    padding: 20px 0;
+    flex-shrink: 0;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+footer a {
+    font-size: 14px;
+}
+
+.icon1 {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    mask: url('https://img.icons8.com/ios-filled/50/airplane-take-off.png') no-repeat center;
+    mask-size: contain;
+    -webkit-mask: url('https://img.icons8.com/ios-filled/50/airplane-take-off.png') no-repeat center;
+    -webkit-mask-size: contain;
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+    }
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    footer p, footer a {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 18px;
+    }
+
+    .tab {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .contenedor {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        padding: 10px;
+    }
+
+    /* .footer es un selector incorrecto, debería ser 'footer' */
+    /* Lo he eliminado ya que los estilos para el footer se manejan con las reglas anteriores */
+}

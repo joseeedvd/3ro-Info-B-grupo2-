@@ -1,0 +1,206 @@
+/* Estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* ====================================================== */
+/* MODIFICACIÓN CLAVE PARA EL STICKY FOOTER */
+/* ====================================================== */
+body {
+  background-color: #f0f0f0;
+  color: #000;
+  display: flex; /* Convierte el body en un contenedor flex */
+  flex-direction: column; /* Apila los elementos hijos (header, main, footer) verticalmente */
+  min-height: 100vh; /* Asegura que el body ocupe al menos el 100% de la altura de la ventana */
+  /* NOTA: height: 100%; en html y body no es necesario si usas min-height: 100vh; en body */
+}
+
+/* ====================================================== */
+/* HEADER - Tu código actual, solo una pequeña sugerencia de color */
+/* ====================================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f3b63; /* Tu color actual, que es bueno */
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+    /* margin-bottom: 0%; -- Esta propiedad no es necesaria y podría causar problemas en flexbox */
+}
+
+.header h1 {
+    font-size: 24px;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+    font-size: 24px;
+    font-family: 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+}
+
+/* ====================================================== */
+/* ICONO - Tu código actual */
+/* ====================================================== */
+.icon1 {
+    width: 20px;
+    height: 20px;
+    background-color: white; /* Color del fondo para el icono */
+    /* Usando mask es una excelente opción si quieres un icono blanco */
+    mask: url('https://img.icons8.com/ios-filled/50/airplane-take-off.png') no-repeat center;
+    mask-size: contain;
+    -webkit-mask: url('https://img.icons8.com/ios-filled/50/airplane-take-off.png') no-repeat center;
+    -webkit-mask-size: contain;
+}
+
+/* Repetición de .menu-icon y .logo, solo las dejo como estaban */
+.menu-icon {
+  font-size: 24px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.icons .icon {
+  margin-left: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ====================================================== */
+/* MAIN - MODIFICACIÓN CLAVE PARA EL STICKY FOOTER */
+/* ====================================================== */
+main {
+  padding: 20px;
+  flex-grow: 1; /* CLAVE: Permite que el 'main' ocupe todo el espacio vertical disponible */
+  /* Quita cualquier margin-top o margin-bottom que pueda empujar el footer hacia arriba */
+  /* margin-top: auto; y margin-bottom: auto; también podrían ser útiles si quieres centrar main verticalmente */
+}
+
+/* Contenido y Galería - Tu código actual */
+.contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Tu código original */
+  flex-wrap: wrap;
+}
+
+/* Hay una clase .contenido repetida, usaré la primera o combinaré */
+.contenido {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente los elementos hijos */
+  align-items: center;
+}
+
+.imagen-principal img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.info {
+  max-width: 400px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.info h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.info p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #2a66b2;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.galeria {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.galeria img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 3px solid gray;
+  background-color: white;
+}
+
+/* ====================================================== */
+/* FOOTER - Modificaciones para un mejor diseño y responsividad */
+/* ====================================================== */
+footer {
+    background-color: #1E3A5F; /* Tu color actual, está bien */
+    color: white;
+    /* text-align: center; -- Esto se manejará mejor con flexbox en el .container */
+    padding: 20px 0; /* Padding vertical, el padding horizontal lo manejará el .container */
+    /* margin-top: 40px; -- ELIMINADO: esto empujaría el footer hacia abajo, contra el sticky footer */
+    flex-shrink: 0; /* Evita que el footer se encoja si hay poco espacio */
+}
+
+footer .container {
+    max-width: 1200px; /* Define un ancho máximo para el contenido del footer */
+    margin: 0 auto; /* Centra el container horizontalmente */
+    width: 90%; /* Asegura que sea responsivo y ocupe el 90% del ancho del footer */
+
+    display: flex; /* Activa Flexbox para los elementos internos del footer */
+    justify-content: space-between; /* Coloca el párrafo a la izquierda y el enlace a la derecha */
+    align-items: center; /* Centra verticalmente los elementos */
+    flex-wrap: wrap; /* Permite que los elementos salten de línea en pantallas pequeñas */
+    gap: 15px; /* Espacio entre los elementos del footer cuando están en la misma línea */
+}
+
+footer p {
+    margin: 0; /* Elimina márgenes predeterminados del párrafo */
+    font-size: 14px; /* Sugerencia de tamaño de fuente */
+    line-height: 1.5; /* Mejora la legibilidad */
+}
+
+/* Tu estilo inline para el <a> es fuerte, pero podemos complementar aquí */
+footer a {
+    /* Los estilos display:flex, align-items, gap, color, text-decoration están en tu HTML inline */
+    font-size: 14px; /* Sugerencia de tamaño de fuente para consistencia */
+}
+
+/* ====================================================== */
+/* Media Queries para Responsividad del Footer */
+/* ====================================================== */
+@media (max-width: 768px) { /* Este breakpoint es un ejemplo, ajústalo según necesites */
+    footer .container {
+        flex-direction: column; /* Apila los elementos en pantallas más pequeñas */
+        text-align: center; /* Centra el texto cuando están apilados */
+    }
+    footer p, footer a {
+        margin: 5px 0; /* Añade un pequeño margen vertical entre los elementos apilados */
+    }
+}
